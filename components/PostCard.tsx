@@ -1,5 +1,4 @@
-import { NextPage } from 'next';
-import React from 'react'
+import React, { FC } from 'react'
 
 interface PostProps {
     post: {
@@ -8,7 +7,7 @@ interface PostProps {
     }
 }
 
-const PostCard: NextPage<PostProps> = ({post}) => {
+const PostCard: FC<PostProps> = ({post}) => {
   return (
     <div>
       {post.title}
