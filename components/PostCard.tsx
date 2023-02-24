@@ -12,7 +12,8 @@ interface PostProps {
           url: string;
         }
       };
-      categories?: object;
+      categories?: Object;
+      content?: Object;
       createdAt: string;
       excerpt: string;
       featuredImage: {
@@ -24,8 +25,6 @@ interface PostProps {
 }
 
 const PostCard: FC<PostProps> = ({post}) => {
-
-  console.log(post)
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">

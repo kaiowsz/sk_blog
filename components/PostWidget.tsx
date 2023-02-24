@@ -2,20 +2,12 @@ import React, {useState, useEffect} from 'react'
 import moment from 'moment'
 import Link from 'next/link'
 import { getRecentPosts, getSimilarPosts } from '../services'
-
-interface Post {
-  createdAt: string;
-  featuredImage: {
-    url: string;
-  };
-  slug: string;
-  title: string;
-}
+import { PostWidgetType } from '../types'
 
 
 const PostWidget = ({categories, slug}: any) => {
 
-  const [relatedPosts, setRelatedPosts] = useState<Post[]>([])
+  const [relatedPosts, setRelatedPosts] = useState<PostWidgetType[]>([])
 
   useEffect(() => {
 
@@ -28,6 +20,7 @@ const PostWidget = ({categories, slug}: any) => {
     } 
   }, [slug])
 
+
   console.log(relatedPosts)
 
   return (
@@ -37,7 +30,7 @@ const PostWidget = ({categories, slug}: any) => {
       {relatedPosts.map((post) => (
           <div key={post.title} className="flex items-center w-full mb-4">
             <div className="w-16 flex-none">
-              <img src={post.featuredImage.url} alt={post.title} className="rounded-full w-[60px] h-[60px] align-middle" />
+              <Link href={`/post/${post.slug}`}><img src={post.featuredImage.url} alt={post.title} className="rounded-full w-[60px] h-[60px] align-middle" /></Link>
             </div>
 
             <div className="flex-grow ml-4">

@@ -1,10 +1,19 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-
 import { PostCard, Categories, PostWidget } from '../components'
 import { getPosts } from '../services'
+import { Post } from '../types'
 
-const Home: NextPage = ({posts}: any) => {
+interface NodePost {
+  node: Post
+}
+
+interface HomeProps {
+  posts: NodePost[]
+}
+
+
+const Home = ({posts}: HomeProps) => {
 
   return (
     <>
@@ -35,6 +44,7 @@ const Home: NextPage = ({posts}: any) => {
 
 export async function getStaticProps() {
   const posts = (await getPosts()) || []
+
 
   return {
     props: {
