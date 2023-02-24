@@ -139,3 +139,22 @@ export const getPostDetails = async (slug: string) => {
 
     return result.post;
 }
+
+interface Comment {
+    name: string;
+    email: string;
+    comment: string;
+    slug: string;
+}
+
+export const submitComment = async (obj: Comment) => {
+    const result = await fetch(`/api/comments`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(obj)
+    })
+
+    return result.json()
+}
