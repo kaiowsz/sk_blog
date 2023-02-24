@@ -2,12 +2,10 @@ import React from 'react'
 import { getPosts, getPostDetails } from '../../services'
 import {PostDetail, Categories, PostWidget, Author, Comments, CommentsForm} from "../../components"
 
-import { Category, Post, PropsOnlyPost } from "../../types"
+import { PropsOnlyPost } from "../../types"
 
 
 const PostDetails = ({post}: PropsOnlyPost) => {
-
-    console.log(post)
 
     if(!post) {
         return "Loading..."
@@ -38,8 +36,6 @@ export default PostDetails
 
 export async function getStaticProps({params}: any) {
     const data = await getPostDetails(params.slug)
-
-    console.log(data)
 
     return {
         props: {

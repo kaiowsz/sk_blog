@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import React, { useState, useEffect, useRef } from 'react'
 import { submitComment } from '../services';
 
@@ -8,12 +10,11 @@ interface CommentsFormProps {
 const CommentsForm = ({slug}: CommentsFormProps) => {
 
   const [error, setError] = useState(false)
-  const [localStorageData, setLocalStorageData] = useState(null)
   const [showSuccessMessage, setShowSuccessMessage] = useState(false)
 
   const commentEl = useRef();
-  const nameEl = useRef('');
-  const emailEl = useRef('');
+  const nameEl = useRef("");
+  const emailEl = useRef("");
   const storeDataEl = useRef();
 
   useEffect(() => {
@@ -58,14 +59,6 @@ const CommentsForm = ({slug}: CommentsFormProps) => {
         setShowSuccessMessage(false)
       }, 3000)
     })
-
-
-
-
-
-
-
-
   }
 
   return (
