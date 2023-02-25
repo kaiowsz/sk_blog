@@ -21,7 +21,7 @@ const PostWidget = ({categories, slug}: any) => {
   }, [slug])
 
   return (
-    <section className="bg-white rounded-lg shadow-lg p-8 mb-8">
+    <aside className="bg-white rounded-lg shadow-lg p-8 mb-8">
       <h3 className="text-xl mb-8 font-semibold border-b pb-4">{slug ? "Related Posts" : "Recent Posts"}</h3>
       
       {relatedPosts.map((post) => (
@@ -42,7 +42,7 @@ const PostWidget = ({categories, slug}: any) => {
 
 
 
-    </section>
+    </aside>
   )
 }
 

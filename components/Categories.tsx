@@ -17,7 +17,7 @@ const Categories: FC = () => {
   }, [])
 
   return (
-    <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+    <aside className="bg-white rounded-lg shadow-lg p-8 mb-8">
       <h3 className="text-xl mb-8 font-semibold border-b pb-4">Categories</h3>
 
       {categories.map(category => (
@@ -29,7 +29,7 @@ const Categories: FC = () => {
 
       ))}
     
-    </div>
+    </aside>
   )
 }
 
