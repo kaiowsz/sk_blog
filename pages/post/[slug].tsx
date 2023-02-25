@@ -1,14 +1,16 @@
 import React from 'react'
 import { getPosts, getPostDetails } from '../../services'
-import {PostDetail, Categories, PostWidget, Author, Comments, CommentsForm} from "../../components"
+import { PostDetail, Categories, PostWidget, Author, Comments, CommentsForm, Loader } from "../../components"
+import { useRouter } from 'next/router'
 
 import { PropsOnlyPost } from "../../types"
 
-
 const PostDetails = ({post}: PropsOnlyPost) => {
 
-    if(!post) {
-        return "Loading..."
+    const router = useRouter()
+
+    if(router.isFallback) {
+        return <Loader/>
     }
 
     return (
