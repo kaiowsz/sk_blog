@@ -1,50 +1,15 @@
+// @ts-nocheck
+
 import React from 'react'
 import { PropsOnlyPost } from '../types'
 import moment from 'moment'
+import { RichText } from '@graphcms/rich-text-react-renderer'
+import parse from "html-react-parser"
 
 type GetContentFragmentType = (index: any, text: any, obj: any, type?: any) => JSX.Element
 
 const PostDetail = ({post}: PropsOnlyPost) => {
-
-  const getContentFragment: GetContentFragmentType = (index, text, obj, type) => {
-    let modifiedText = text;
   
-    if (obj) {
-      if (obj.bold) {
-        modifiedText = (<b key={index}>{text}</b>);
-      }
-  
-      if (obj.italic) {
-        modifiedText = (<em key={index}>{text}</em>);
-      }
-  
-      if (obj.underline) {
-        modifiedText = (<u key={index}>{text}</u>);
-      }
-    }
-  
-    switch (type) {
-      case 'heading-three':
-        return <h3 key={index} className="text-xl font-semibold mb-4">{modifiedText.map((item: any, i: number) => <React.Fragment key={i}>{item}</React.Fragment>)}</h3>;
-      case 'paragraph':
-        return <p key={index} className="mb-8">{modifiedText.map((item: any, i: number) => <React.Fragment key={i}>{item}</React.Fragment>)}</p>;
-      case 'heading-four':
-        return <h4 key={index} className="text-md font-semibold mb-4">{modifiedText.map((item: any, i: number) => <React.Fragment key={i}>{item}</React.Fragment>)}</h4>;
-      case 'image':
-        return (
-          <img
-            key={index}
-            alt={obj.title}
-            height={obj.height}
-            width={obj.width}
-            src={obj.src}
-          />
-        );
-      default:
-        return modifiedText;
-    }
-  };
-
   return (
     <section className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
       <div className="relative overflow-hidden shadow-md mb-6">
@@ -74,11 +39,23 @@ const PostDetail = ({post}: PropsOnlyPost) => {
         </div>
         <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
 
-        {post.content?.raw.children.map((typeObj, index) => {
-          const children = typeObj.children.map((item, itemIndex) => getContentFragment(itemIndex, item.text, item))
-
-          return getContentFragment(index, children, typeObj, typeObj.type)
-        })}
+        <RichText content={post.content?.raw.children} renderers={{
+          p: ({children}) => {
+            return (
+              <p className="my-2">{children}</p>
+            )
+          },
+          img: ({altText, src}) => {
+            return (
+              <img src={src} alt={altText} className="my-6" />
+            )
+          },
+          a: ({href, openInNewTab, title, children}) => {
+            return (
+              <a href={href} target={openInNewTab ? "_blank" : "_self"} className="underline hover:text-gray-600">{children}</a>
+            )
+          }
+        }} />
       </div>
     </section>
   )
