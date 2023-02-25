@@ -25,7 +25,7 @@ const CommentsForm = ({slug}: CommentsFormProps) => {
   function handleCommentSubmit() {
     setError(false)
 
-    const { value: comment }: any = commentEl.current
+    const { valuesection: comment }: any = commentEl.current
     const { value: name }: any = nameEl.current
     const { value: email }: any = emailEl.current
     const { checked: storeData }: any = storeDataEl.current
@@ -62,7 +62,7 @@ const CommentsForm = ({slug}: CommentsFormProps) => {
   }
 
   return (
-    <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
+    <section className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
       <h3 className="text-xl mb-8 font-semibold border-b pb-4">Leave a comment</h3>
       <div className="grid grid-cols-1 gap-4 mb-4">
         <textarea
@@ -104,7 +104,7 @@ const CommentsForm = ({slug}: CommentsFormProps) => {
         </button>
         {showSuccessMessage && <span className="text-xl float-right font-semibold mt-3 text-green-500">Comment submitted for review</span>}
       </div>
-    </div>
+    </section>
     )
 }
 
