@@ -21,7 +21,7 @@ export type Post = {
         }
     };
     createdAt: string;
-    excerpt: string;
+    excerpt?: string;
     featuredImage: { 
         url: string 
     };

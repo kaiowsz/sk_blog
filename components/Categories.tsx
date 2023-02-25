@@ -22,7 +22,7 @@ const Categories: FC = () => {
 
       {categories.map(category => (
         <Link key={category.slug} href={`/category/${category.slug}`}>
-          <span className="cursor-pointer block pb-3 mb-3">
+          <span className="cursor-pointer block pb-3 mb-3 hover:text-gray-600 transition duration-400">
             {category.name}
           </span>
         </Link>
