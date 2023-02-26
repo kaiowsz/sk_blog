@@ -40,6 +40,26 @@ const PostDetail = ({post}: PropsOnlyPost) => {
         <h1 className="mb-8 text-3xl font-semibold">{post.title}</h1>
 
         <RichText content={post.content?.raw.children} renderers={{
+          h2: ({children}) => {
+            return (
+              <h1 className="font-bold text-3xl">{children}</h1>
+            )
+          },
+          h3: ({children}) => {
+            return (
+              <h1 className="font-bold text-3xl">{children}</h1>
+            )
+          },
+          h5: ({children}) => {
+            return (
+              <h1 className="font-bold text-2xl">{children}</h1>
+            )
+          },
+          h6: ({children}) => {
+            return (
+              <h1 className="font-bold text-xl">{children}</h1>
+            )
+          },
           p: ({children}) => {
             return (
               <p className="my-2">{children}</p>
@@ -54,7 +74,7 @@ const PostDetail = ({post}: PropsOnlyPost) => {
             return (
               <a href={href} target={openInNewTab ? "_blank" : "_self"} className="underline hover:text-gray-600">{children}</a>
             )
-          }
+          },
         }} />
       </div>
     </section>
