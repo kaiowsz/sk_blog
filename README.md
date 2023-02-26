@@ -1,27 +1,28 @@
-# Next.js + Tailwind CSS Example
+# SK Blog
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.2)](https://tailwindcss.com/blog/tailwindcss-v3-2) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+![Homepage screenshot](https://github.com/kaiowsz/sk_blog/blob/main/public/readme.png)
 
-## Deploy your own
+## :skier: About the project
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+- A fully function blog created with NextJS and a dedicated CMS to manage content.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+## :hammer_and_wrench: Functionalities
 
-## How to use
+Inside the blog, you can:
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+- Filter featured posts
+- Create new posts
+- Add comments
+- Filter comments
+- See author informations
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-```
 
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+## :computer: Technologies
 
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+<li>HTML</li>
+<li>Tailwind CSS</li>
+<li>TypeScript</li>
+<li>React</li>
+<li>NextJS</li>
+<li>GraphQL</li>
+<li>GraphCMS (Hygraph)</li>
