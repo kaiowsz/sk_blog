@@ -25,7 +25,7 @@ const CommentsForm = ({slug}: CommentsFormProps) => {
   function handleCommentSubmit() {
     setError(false)
 
-    const { valuesection: comment }: any = commentEl.current
+    const { value: comment }: any = commentEl.current
     const { value: name }: any = nameEl.current
     const { value: email }: any = emailEl.current
     const { checked: storeData }: any = storeDataEl.current
