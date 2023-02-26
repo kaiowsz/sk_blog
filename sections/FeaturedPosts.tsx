@@ -7,10 +7,14 @@ import { getFeaturedPosts } from "../services"
 
 const responsive = {
     largeDesktop: {
-        breakpoint: { max: 4000, min: 1024 },
+        breakpoint: { max: 4000, min: 1500 },
         items: 5
     },
     desktop: {
+      breakpoint: {max: 1500, min: 1024},
+      items: 4,
+    },
+    notebook: {
         breakpoint: { max: 1024, min: 768 },
         items: 3
     },

@@ -55,6 +55,7 @@ const CommentsForm = ({slug}: CommentsFormProps) => {
     submitComment(commentObj)
     .then((res) => {
       setShowSuccessMessage(true)
+      commentEl.current.value = ""
       setTimeout(() => {
         setShowSuccessMessage(false)
       }, 3000)
